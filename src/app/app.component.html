@@ -10,8 +10,8 @@
             <div class="row">
               <h6 class="d-inline-flex">Basic Custom Pipes</h6>
               <div class="col-12">
-                <ul>
-                  <li>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4 border-bottom border-info">
                     <div class="row">
                       <div class="col-md-12">
                         <p class="card-text text-primary">
@@ -59,13 +59,81 @@
               </div>
             </div>
           </li>
+        </ul>
+        <ul class="list-group list-group-flush">
           <li class="list-group-item p-4">
             <div class="row">
               <h6 class="d-inline-flex">Advanced Custom Pipes</h6>
               <div class="col-12">
-                <ul>
-                  <li>
-                   
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4 border-bottom">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="text-primary">
+                          Filtering the Employees based on the "John" is :
+                        </p>
+                        <ul class="list-group list-group-flush">
+                          <li
+                            class="list-group-item p-0"
+                            *ngFor="
+                              let employee of Employees | searchRecord : 'John'
+                            "
+                          >
+                            {{ employee.ID }} - {{ employee.firstName }} -
+                            {{ employee.lastName }} - {{ employee.Location }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item p-4 border-bottom border-info">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="text-primary">
+                          Filtering Customers based on the textbox :
+                        </p>
+                      </div>
+                      <div class="row col-md-12">
+                        <div class="col-md-9"></div>
+                        <!-- Empty space equivalent to 9 columns -->
+                        <div class="col-md-3">
+                          <input
+                            type="text"
+                            [(ngModel)]="searchTerm"
+                            class="form-control mb-3"
+                            placeholder="Enter customer name"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Last Name</th>
+                              <th>First Name</th>
+                              <th>Address</th>
+                              <th>City</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr
+                              *ngFor="
+                                let record of customers
+                                  | searchRecord : searchTerm
+                              "
+                            >
+                              <td>{{ record.id }}</td>
+                              <td>{{ record.lastName }}</td>
+                              <td>{{ record.firstName }}</td>
+                              <td>{{ record.address }}</td>
+                              <td>{{ record.city }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -76,3 +144,5 @@
     </ul>
   </div>
 </div>
+
+                     
