@@ -1,0 +1,101 @@
+<div style="width: 200em" class="container mt-1">
+  <div class="row">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item p-4 border-bottom border-info">
+        <div class="row">
+          <h3 class="d-inline-flex">Custom Directives</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item p-4">
+            <div class="row">
+              <h6 class="d-inline-flex">Basic Custom directives</h6>
+              <div class="col-12">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="card-text text-primary" appMdBasicColor>
+                          John is from London and he is working in Google
+                          Company
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+
+          <!--Applying the color through the property of the element-->
+          <li class="list-group-item p-4">
+            <div class="row">
+              <h6 class="d-inline-flex">Basic Custom directives with property binding : Use @Input</h6>
+              <div class="col-12">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="card-text text-primary" [colorName]="'green'" appMdBasicColor>
+                          Please Go ahead.
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+
+
+         
+           <li class="list-group-item p-4">
+            <div class="row">
+              <h6 class="d-inline-flex">Basic Custom directives with HostPropery binding : Use @HostProperty</h6>
+              <div class="col-12">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <a class="text-primary" href="" appMdBasicColor>
+                          Employee Details
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+
+          
+
+           <li class="list-group-item p-4">
+            <div class="row">
+              <h6 class="d-inline-flex">Basic Custom directives with @HostBinding and @Input</h6>
+              <div class="col-12">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item p-4">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="card-text text-primary" appMdBasicColor [mdinputbgColor]="'red'" >
+                          Click here to contact us
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+
+
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
